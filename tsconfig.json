@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/image-gallery.jsx", "src/components/ui/ScratchCard.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/image-gallery.jsx", "src/components/ui/ScratchCard.jsx", "src/components/ProfileSection.jsx"],
   "exclude": ["node_modules"]
 }
