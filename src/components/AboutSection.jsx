@@ -3,30 +3,15 @@ import { Phone, Mail, MapPin } from "tabler-icons-react";
 import me from "./assets/me.jpg";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { StarsBackground } from "./ui/stars-background";
+import { ShootingStars } from "./ui/shooting-stars";
 
 export function AboutSection() {
   return (
-    <section className={cn("p-8 text-gray-200 bg-gray-900")}>
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        {/* Image Section */}
-        <motion.div
-          className="flex justify-center"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-         <div className="relative w-full md:w-[300px] h-[400px] rounded-lg shadow-lg overflow-hidden">
-  <Image
-    src={me}
-    alt="Navpreet Kaur Kang"
-    layout="fill"
-    objectFit="cover"
-    className="rounded-lg"
-  />
-</div>
-
-        </motion.div>
-
+    <section className={cn("p-8 text-gray-200 relative")}> {/* Add 'relative' class */}
+      <ShootingStars />
+      <StarsBackground />
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10"> {/* Add 'relative' and 'z-10' */}
         {/* Text Section */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
@@ -70,6 +55,24 @@ export function AboutSection() {
                 Melbourne, Australia
               </li>
             </ul>
+          </div>
+        </motion.div>
+
+        {/* Image Section */}
+        <motion.div
+          className="flex justify-center"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <div className="relative w-full md:w-[300px] h-[400px] rounded-lg shadow-lg overflow-hidden">
+            <Image
+              src={me}
+              alt="Navpreet Kaur Kang"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-lg"
+            />
           </div>
         </motion.div>
       </div>
